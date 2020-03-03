@@ -8,7 +8,6 @@ $id=$_GET['id'];
 				</tr>
 				<?php
 					include 'connection.php';
-					if(is_numeric($id)){
 					$sql="select * from courses where id='$id'";
 					$res=mysqli_query($con,$sql);
 					$count=mysqli_num_rows($res);
@@ -19,8 +18,8 @@ $id=$_GET['id'];
 				?>
 				<form action="editcr.php" method="post">
 				<tr>
-					<td><input type="text" name="cname" class="form-control" value="<?php echo htmlspecialchars($row['course_name'], ENT_QUOTES);?>" required></td>
-					<td><textarea name="cdesc" class="form-control" required><?php echo htmlspecialchars($row['course_des'], ENT_QUOTES);?></textarea></td>
+					<td><input type="text" name="cname" class="form-control" value="<?php echo $row['course_name'];?>" required></td>
+					<td><textarea name="cdesc" class="form-control" required><?php echo $row['course_des'];?></textarea></td>
 				</tr>
 				<input type="hidden" name="cid" value="<?php echo $id;?>">
 				<tr>
@@ -32,7 +31,6 @@ $id=$_GET['id'];
 				
 				<?php
 						}
-					}
 					}
 					else{
 						header("location:error1.php");

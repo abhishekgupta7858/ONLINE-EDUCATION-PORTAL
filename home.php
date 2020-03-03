@@ -4,13 +4,7 @@ $sql="select * from users where username='$uname'";
 $res=mysqli_query($con,$sql);
 $count=mysqli_num_rows($res);
 $dp=$_GET['image'];
-if($dp=='image.php')
-{
 include $dp;
-}
-else{
-	echo "<font color='red'>Not a valid file</font>";
-}
 if($count>0)
 {
 	while($row=mysqli_fetch_assoc($res))

@@ -14,8 +14,8 @@
 						{
 				?>	
 				<tr>
-					<td><?php echo htmlspecialchars($row['course_name'], ENT_QUOTES);?></td>
-					<td><?php echo htmlspecialchars($row['course_des'], ENT_QUOTES);?></td>
+					<td><?php echo $row['course_name'];?></td>
+					<td><?php echo $row['course_des'];?></td>
 				</tr>
 				<?php
 						}
